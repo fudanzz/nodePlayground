@@ -20,4 +20,4 @@ function mutil_promise(firstFile) {
 
 mutil_promise('networkcall').then((data) => {
     console.log(data);
-});
+}, (err) => console.log(err));
