@@ -11,4 +11,21 @@ app.get('/', (req, res) => {
 })
 
 
+app.get('/user/:username', (req, res) => {
+    res.end(req.params.username);
+    res.end();
+})
+
+app.route('/dexter')
+    .get((req, res) => {
+        res.send('get a dexter');
+    })
+    .post((req, res) => {
+        res.send('post a dog');
+    });
+
+
+var gizmo = require('./router.js');
+
+app.use('/gizmo', gizmo);
 app.listen(8080, '127.0.0.1');
